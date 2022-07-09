@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Roboto:wght@300;400;500;700&display=swap');
+
+
+:root {
+  --background-primary: linear-gradient(180deg, #102347 0%, #181818 100%);
+  --background-secondary: #283142;
+  --color-primary: #676FFF;
+  --color-secondary: #1B2531; 
+  --color-third: #9AAABE; 
+  --color-fourth: #E9E9E9
+  --color-fifth: #CFCFCF;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body, html {
+  background-color: #000;
+  color: #fff;
+  
+}
+
+
