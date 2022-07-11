@@ -1,4 +1,6 @@
-import iconNote from '../../assets/notification-icon.svg'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Button from "../Button";
 import '../Card/style.css'
 
 export default function Card() {
@@ -9,16 +11,20 @@ export default function Card() {
           <h2 className="thmeta-sales-title">Vendas</h2>
           <div>
             <div className="thmeta-form-control-container">
-              <input
+              <DatePicker
+                selected={new Date()}
+                onChange={(date: Date) => { }}
                 className="thmeta-form-control"
-                type="text"
-                placeholder='data inicial' />
+                dateFormat="dd/MM/yyyy"
+              />
             </div>
             <div className="thmeta-form-control-container">
-              <input
+              <DatePicker
+                selected={new Date()}
+                onChange={(date: Date) => { }}
                 className="thmeta-form-control"
-                type="text"
-                placeholder='data final' />
+                dateFormat="dd/MM/yyyy"
+              />
             </div>
           </div>
           <div className="thmeta-table-container">
@@ -43,10 +49,7 @@ export default function Card() {
                   <td className="thmeta-vw-992">11</td>
                   <td>R$ 55300.00</td>
                   <td>
-                    <img
-                      src={iconNote}
-                      alt="Notificar"
-                    />
+                    <Button />
                   </td>
                 </tr>
                 <tr>
@@ -57,10 +60,7 @@ export default function Card() {
                   <td className="thmeta-vw-992">11</td>
                   <td>R$ 55300.00</td>
                   <td>
-                    <img
-                      src={iconNote}
-                      alt="Notificar"
-                    />
+                    <Button />
                   </td>
                 </tr>
                 <tr>
@@ -71,10 +71,7 @@ export default function Card() {
                   <td className="thmeta-vw-992">11</td>
                   <td>R$ 55300.00</td>
                   <td>
-                    <img
-                      src={iconNote}
-                      alt="Notificar"
-                    />
+                    <Button />
                   </td>
                 </tr>
               </tbody>
