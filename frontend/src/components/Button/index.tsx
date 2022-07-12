@@ -1,5 +1,5 @@
-import iconNote from '../../assets/img/notification-icon.svg'
-import '../Button/style.css'
+import iconNote from '../../assets/img/notification-icon.svg';
+import '../Button/style.css';
 
 export default function Button() {
   return (
