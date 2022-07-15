@@ -2,8 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Sale } from "../../models/sale";
+import { BASE_URL } from "../../utils/request";
 import Button from "../Button";
 import '../Card/style.css';
+
+
 
 export default function Card() {
 
@@ -13,11 +17,13 @@ export default function Card() {
   const [minDate, setMinDate] = useState(min);
   const [maxDate, setMaxDate] = useState(max);
 
+  const [sales, setSales] = useState<Sale[]>([])
+
   useEffect(() => {
-    axios.get("https://thmeta.herokuapp.com/sales")
+    axios.get(`${BASE_URL}/sales`)
       .then((response) => {
-        console.log(response.data);
-        
+        setSales(response.data.content);
+
       })
   }, []);
 
@@ -58,39 +64,21 @@ export default function Card() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="thmeta-vw-992">#341</td>
-                  <td className="thmeta-vw-576">10/07/2022</td>
-                  <td>Thiago</td>
-                  <td className="thmeta-vw-992">15</td>
-                  <td className="thmeta-vw-992">11</td>
-                  <td>R$ 55300.00</td>
-                  <td>
-                    <Button />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="thmeta-vw-992">#341</td>
-                  <td className="thmeta-vw-576">10/07/2022</td>
-                  <td>Thiago</td>
-                  <td className="thmeta-vw-992">15</td>
-                  <td className="thmeta-vw-992">11</td>
-                  <td>R$ 55300.00</td>
-                  <td>
-                    <Button />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="thmeta-vw-992">#341</td>
-                  <td className="thmeta-vw-576">10/07/2022</td>
-                  <td>Thiago</td>
-                  <td className="thmeta-vw-992">15</td>
-                  <td className="thmeta-vw-992">11</td>
-                  <td>R$ 55300.00</td>
-                  <td>
-                    <Button />
-                  </td>
-                </tr>
+                {sales.map((sale) => {
+                  return (
+                    <tr key={sale.id}>
+                      <td className="thmeta-vw-992">{sale.id}</td>
+                      <td className="thmeta-vw-576">{new Date(sale.date).toLocaleDateString()}</td>
+                      <td>{sale.sellerName}</td>
+                      <td className="thmeta-vw-992">{sale.visited}</td>
+                      <td className="thmeta-vw-992">{sale.deals}</td>
+                      <td>R$ {sale.amount.toFixed(2) }</td>
+                      <td>
+                        <Button />
+                      </td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
