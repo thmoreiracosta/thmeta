@@ -8,17 +8,22 @@ type ButtonProps = {
   id: number;
 }
 
-function handleClick(id : number) {
+function handleClick(id: number) {
   axios(`${BASE_URL}/sales/${id}/notification`)
-    .then(response => {
-      toast.info("SMS enviado com sucesso!");
+    .then((response) => {
+      toast.info("SMS sendo preparado...")
     })
+    setTimeout(() => {
+      toast.success("Envio concluído com sucesso!")
+
+    }, 1000*6)
 }
+
 
 export default function Button(props: ButtonProps) {
   return (
-    <div>      
-      <img 
+    <div>
+      <img
         className="notification-logo"
         onClick={() => handleClick(props.id)}
         src={iconNote}
