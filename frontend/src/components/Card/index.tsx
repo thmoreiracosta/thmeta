@@ -78,7 +78,7 @@ export default function Card() {
                       <td className="thmeta-vw-992">{sale.deals}</td>
                       <td>R$ {sale.amount.toFixed(2) }</td>
                       <td>
-                        <Button />
+                        <Button id={sale.id} />
                       </td>
                     </tr>
                   )
