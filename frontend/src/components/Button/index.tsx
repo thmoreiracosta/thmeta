@@ -10,7 +10,7 @@ type ButtonProps = {
 
 function handleClick(id: number) {
   axios(`${BASE_URL}/sales/${id}/notification`)
-    .then((response) => {
+    .then(() => {
       toast.info("SMS sendo preparado...")
     })
     setTimeout(() => {
