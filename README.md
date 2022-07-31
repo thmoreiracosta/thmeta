@@ -23,6 +23,7 @@
 - Consumo API Java Spring Boot
 - Conceitos básicos usando o React com Typescript
 - Conceitos básicos OOB com Java Spring Boot
+- Envio de notificações via SMS por meio da plataforma Twilio
 
 
 Desenvolvido junto com material de aulas da plataforma da DevSuperior
