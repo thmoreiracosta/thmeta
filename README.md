@@ -3,7 +3,7 @@
 
 - Deploy: https://thmeta-thmoreiracosta.vercel.app/
 
-![Imagem site](./src/assets/fundo_readme_1.png)
+![Imagem site](..frontend/src/assets/fundo_readme_1.png)
 
 ### Tecnologias Utilizadas
 - React JS
